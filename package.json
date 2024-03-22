@@ -1,0 +1,25 @@
+{
+  "name": "autprovident",
+  "version": "1.0.0",
+  "description": "Minimal JavaScript kit without library dependencies to push things off-canvas using just class manipulation",
+  "main": "dist/offside.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ErikFahey/autprovident.git"
+  },
+  "author": "LavonRohan",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.x",
+    "grunt-contrib-copy": "~0.6.x",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-uglify": "~0.6.x",
+    "grunt-contrib-watch": "~0.6.x",
+    "grunt-replace": "~0.8.x",
+    "jshint-stylish": "^2.0.1",
+    "load-grunt-tasks": "^3.2.0"
+  },
+  "engines": {
+    "node": ">=0.11.0"
+  }
+}

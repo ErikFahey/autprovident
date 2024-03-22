@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Offside.js - Typical demo</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="../../dist/offside.css">
+        <link rel="stylesheet" href="../css/demo.css">
+    </head>
+
+    <body>
+        <!-- Off-canvas Elements -->
+        <nav id="menu-1" class="offside">
+            <a href="#" class="icon icon--cross menu-btn-1--close h--right">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <ul>
+                <li>First menu</li>
+                <li><a href="#">...</a></li>
+                <li><a href="#">...</a></li>
+                <li><a href="#">...</a></li>
+                <li><a href="#">...</a></li>
+                <li><a href="#">...</a></li>
+            </ul>
+        </nav>
+
+        <nav id="menu-2" class="offside">
+            <a href="#" class="icon icon--cross menu-btn-2--close h--left">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <ul>
+                <li>Second menu</li>
+                <li><a href="#">...</a></li>
+                <li><a href="#">...</a></li>
+                <li><a href="#">...</a></li>
+                <li><a href="#">...</a></li>
+                <li><a href="#">...</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Site Overlay -->
+        <div class="site-overlay"></div>
+
+        <!-- Your Content -->
+        <div id="container">
+
+            <header>
+                <a href="#" class="icon icon--hamburger menu-btn-1 h--left">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                
+                <a href="#" class="icon icon--hamburger menu-btn-2 h--right">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+            </header>
+
+            <div class="logo">
+                <img src="../img/offside-logo.svg" alt="Offside.js">
+            </div>
+
+            <h1>Overlay and close button</h1>
+
+            <p><strong>Open your DOM inspector and see how the off-canvas stuff is handled just by updating classes names.</strong></p>
+
+            <!-- Menu Button -->
+            <div class="menu-btn-1 offside-button">First menu<br/>&#8592;</div>
+            <div class="menu-btn-2 offside-button">Second menu<br/>&#8594;</div>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pharetra neque a diam cursus pulvinar. Suspendisse faucibus mi id accumsan lobortis. Pellentesque consectetur varius turpis, nec viverra justo pellentesque sit amet. Vestibulum convallis leo non purus vehicula, non faucibus libero rhoncus. Morbi aliquam tincidunt facilisis. Aenean sodales nulla ac semper consectetur. Vivamus commodo massa convallis justo posuere vestibulum. Aenean congue non mauris ac auctor.</p>
+
+            <p>Ut suscipit et eros nec suscipit. Nulla congue, mauris nec bibendum sagittis, urna orci tincidunt massa, in vulputate velit nulla vitae nunc. Etiam urna justo, imperdiet nec orci sollicitudin, tempus feugiat erat. Vivamus id lectus nulla. Vestibulum sagittis cursus metus vel ultricies. Suspendisse viverra interdum metus eu placerat. Quisque tristique velit nisi, scelerisque consectetur tortor vehicula ut. Donec id fermentum mi, nec venenatis felis.</p>
+        </div>
+
+        <script src="../../dist/offside.js"></script>
+
+        <script>
+            var offsideMenu1 = offside( '#menu-1', {
+
+                slidingElementsSelector: '#container, #results',
+                debug: true, 
+                buttonsSelector: '.menu-btn-1, .menu-btn-1--close',
+                slidingSide: 'left',
+                beforeOpen: function(){},
+                beforeClose: function(){},
+            });
+
+            var offsideMenu2 = offside( '#menu-2', {
+
+                slidingElementsSelector: '#container, #results',
+                debug: true, 
+                buttonsSelector: '.menu-btn-2, .menu-btn-2--close',
+                slidingSide: 'right',
+                beforeOpen: function(){},
+                beforeClose: function(){},
+            });
+
+            var overlay = document.querySelector('.site-overlay')
+                .addEventListener( 'click', window.offside.factory.closeOpenOffside );
+
+            console.log(offsideMenu1);
+            console.log(offsideMenu2);
+
+        </script>
+
+    </body>
+</html>
